@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraising for a Cause</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Support Our Cause</h1>
+        <p>Help us reach our goal to make a difference.</p>
+        <div class="progress-container">
+            <progress id="progress-bar" value="0" max="100"></progress>
+            <p>Raised: $<span id="raised-amount">0</span> / $<span id="goal-amount">1000</span></p>
+        </div>
+        
+        <form id="donation-form">
+            <input type="number" id="donation-amount" placeholder="Enter amount" required>
+            <button type="submit">Donate</button>
+        </form>
+        
+        <h2>Recent Donations</h2>
+        <ul id="donors-list"></ul>
+    </div>
+    
+    <script>
+        document.getElementById('donation-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const amount = document.getElementById('donation-amount').value;
+            if (!amount || amount <= 0) return alert('Please enter a valid amount.');
+            
+            // TODO: Integrate with Stripe or PayPal API
+            alert('Payment processing is not yet implemented.');
+        });
+    </script>
+</body>
+</html>
